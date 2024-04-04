@@ -70,9 +70,9 @@ void Engine::initShaders() {
 
 void Engine::initShapes() {
     // TODO: Make all "Buttons" here
-    // TODO: They will be our lights, and will be affected by other buttons being pressed
+    // TODO: They will be our lights, and will be affected by other buttons being pressed. Use the size of 80x80
     // red spawn button centered in the top left corner
-    spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{100, 50}, color{1, 0, 0, 1});
+    spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
 }
 
 void Engine::processInput() {
