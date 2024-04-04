@@ -69,6 +69,8 @@ void Engine::initShaders() {
 }
 
 void Engine::initShapes() {
+    // TODO: Make all "Buttons" here
+    // TODO: They will be our lights, and will be affected by other buttons being pressed
     // red spawn button centered in the top left corner
     spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{100, 50}, color{1, 0, 0, 1});
 }
@@ -99,6 +101,7 @@ void Engine::processInput() {
     }
     // Hint: one of the indices is GLFW_KEY_UP
     if (screen == play) {
+        // TODO: Remove moving the initial button
         if (keys[GLFW_KEY_RIGHT]) {
             spawnButton->moveX(5);
         }
@@ -128,9 +131,11 @@ void Engine::processInput() {
     }
     // Mouse position is inverted because the origin of the window is in the top left corner
     MouseY = height - MouseY; // Invert y-axis of mouse position
+    // TODO: Remove "overlapping" function, we only need if a mouse is pressed
     bool buttonOverlapsMouse = spawnButton->isOverlapping(vec2(MouseX, MouseY));
     bool mousePressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
+    // TODO: We can use this following code to change the lights to on or off
     if (screen == play) {
         if (MouseY < spawnButton->getBottom() && MouseY > spawnButton->getTop() && MouseX < spawnButton->getRight() && MouseX > spawnButton->getLeft()) {
             if (mousePressed) {
@@ -189,6 +194,8 @@ void Engine::render() {
 
             spawnButton->setUniforms();
             spawnButton->draw();
+
+            // TODO: Remove naming the button
             this->fontRenderer->renderText("Spawn", spawnButton->getPos().x - 30, spawnButton->getPos().y - 5, 0.5, vec3{1, 1, 1});
 
             break;
@@ -203,6 +210,7 @@ void Engine::render() {
     glfwSwapBuffers(window);
 }
 
+// TODO: CHANGE this confetti function, use it to affect the other buttons
 void Engine::spawnConfetti() {
     vec2 pos = {rand() % (int)width, rand() % (int)height};
 
