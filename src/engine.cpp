@@ -103,6 +103,9 @@ void Engine::initShapes() {
     button23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
     button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
     button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+
+    //vector<unique_ptr<Shape>> buttonVec;
+    //buttonVec.push_back(button1); // {button1, button2, button3, button4, button5, };
 }
 
 void Engine::processInput() {
@@ -162,7 +165,7 @@ void Engine::processInput() {
     // Mouse position is inverted because the origin of the window is in the top left corner
     MouseY = height - MouseY; // Invert y-axis of mouse position
     // TODO: Remove "overlapping" function, we only need if a mouse is pressed
-    bool buttonOverlapsMouse = spawnButton->isOverlapping(vec2(MouseX, MouseY));
+    //bool buttonOverlapsMouse = spawnButton->isOverlapping(vec2(MouseX, MouseY));
     bool mousePressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
     // TODO: We can use this following code to change the lights to on or off
@@ -171,9 +174,6 @@ void Engine::processInput() {
             if (mousePressed) {
                 spawnButton->setColor(pressFill);
             }
-            else if (buttonOverlapsMouse) {
-                spawnButton->setColor(hoverFill);
-            }
         }
 
         if (mousePressedLastFrame && !mousePressed) {
@@ -181,7 +181,7 @@ void Engine::processInput() {
             spawnConfetti();
         }
 
-        if (!mousePressed && !buttonOverlapsMouse) {
+        if (!mousePressed) { // !buttonOverlapsMouse
             spawnButton->setColor(originalFill);
         }
     }
