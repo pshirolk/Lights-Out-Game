@@ -175,6 +175,11 @@ void Engine::processInput() {
                 spawnButton->setColor(pressFill);
             }
         }
+        if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+            if (mousePressed) {
+                button1->setColor(pressFill);
+            }
+        }
 
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
@@ -183,6 +188,7 @@ void Engine::processInput() {
 
         if (!mousePressed) { // !buttonOverlapsMouse
             spawnButton->setColor(originalFill);
+            button1->setColor(originalFill);
         }
     }
     // Save mousePressed for next frame
