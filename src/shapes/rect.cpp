@@ -43,8 +43,6 @@ void Rect::initVectors() {
             1, 2, 3,  // Second triangle
 
             // TODO: Initialize other buttons
-            0, 1, 2, // First triangle
-            1, 2, 3,  // Second triangle
     });
 }
 // Overridden Getters from Shape
