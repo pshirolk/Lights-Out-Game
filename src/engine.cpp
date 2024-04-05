@@ -286,7 +286,7 @@ void Engine::render() {
             button25->draw();
 
             // TODO: Remove naming the button
-            this->fontRenderer->renderText("Spawn", spawnButton->getPos().x - 30, spawnButton->getPos().y - 5, 0.5, vec3{1, 1, 1});
+            //this->fontRenderer->renderText("Spawn", spawnButton->getPos().x - 30, spawnButton->getPos().y - 5, 0.5, vec3{1, 1, 1});
 
             break;
         }
