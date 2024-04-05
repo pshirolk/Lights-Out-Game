@@ -39,6 +39,32 @@ private:
 
     // Shapes
     unique_ptr<Shape> spawnButton;
+    unique_ptr<Shape> spawnButton1;
+    unique_ptr<Shape> spawnButton2;
+    unique_ptr<Shape> spawnButton3;
+    unique_ptr<Shape> spawnButton4;
+    unique_ptr<Shape> spawnButton5;
+    unique_ptr<Shape> spawnButton6;
+    unique_ptr<Shape> spawnButton7;
+    unique_ptr<Shape> spawnButton8;
+    unique_ptr<Shape> spawnButton9;
+    unique_ptr<Shape> spawnButton10;
+    unique_ptr<Shape> spawnButton11;
+    unique_ptr<Shape> spawnButton12;
+    unique_ptr<Shape> spawnButton13;
+    unique_ptr<Shape> spawnButton14;
+    unique_ptr<Shape> spawnButton15;
+    unique_ptr<Shape> spawnButton16;
+    unique_ptr<Shape> spawnButton17;
+    unique_ptr<Shape> spawnButton18;
+    unique_ptr<Shape> spawnButton19;
+    unique_ptr<Shape> spawnButton20;
+    unique_ptr<Shape> spawnButton21;
+    unique_ptr<Shape> spawnButton22;
+    unique_ptr<Shape> spawnButton23;
+    unique_ptr<Shape> spawnButton24;
+    unique_ptr<Shape> spawnButton25;
+
     vector<unique_ptr<Shape>> confetti;
 
     // Shaders
