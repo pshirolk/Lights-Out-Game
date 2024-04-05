@@ -74,31 +74,35 @@ void Engine::initShapes() {
     // red spawn button centered in the top left corner
     spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
 
-    spawnButton1 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton2 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton4 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton5 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton6 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton7 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton8 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton9 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton10 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton11 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton12 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton13 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton14 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton15 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton16 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton17 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton18 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton19 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton20 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton21 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton22 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton24 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    spawnButton25 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button4 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button5 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+
+    button6 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button7 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button8 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button9 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button10 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+
+    button11 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button12 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button13 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button14 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button15 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+
+    button16 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button17 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button18 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button19 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button20 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+
+    button21 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button22 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
 }
 
 void Engine::processInput() {
@@ -192,6 +196,7 @@ void Engine::update() {
     lastFrame = currentFrame;
 
     // If the size of the confetti vector reaches 100, change screen to over
+    // TODO: Change this to end when all lights are off
     if (confetti.size() == 100)
         screen = over;
 }
@@ -221,6 +226,58 @@ void Engine::render() {
 
             spawnButton->setUniforms();
             spawnButton->draw();
+
+            // TODO: Initialize all buttons
+            button1->setUniforms();
+            button1->draw();
+            button2->setUniforms();
+            button2->draw();
+            button3->setUniforms();
+            button3->draw();
+            button4->setUniforms();
+            button4->draw();
+            button5->setUniforms();
+            button5->draw();
+            button6->setUniforms();
+            button6->draw();
+            button7->setUniforms();
+            button7->draw();
+            button8->setUniforms();
+            button8->draw();
+            button9->setUniforms();
+            button9->draw();
+            button10->setUniforms();
+            button10->draw();
+            button11->setUniforms();
+            button11->draw();
+            button12->setUniforms();
+            button12->draw();
+            button13->setUniforms();
+            button13->draw();
+            button14->setUniforms();
+            button14->draw();
+            button15->setUniforms();
+            button15->draw();
+            button16->setUniforms();
+            button16->draw();
+            button17->setUniforms();
+            button17->draw();
+            button18->setUniforms();
+            button18->draw();
+            button19->setUniforms();
+            button19->draw();
+            button20->setUniforms();
+            button20->draw();
+            button21->setUniforms();
+            button21->draw();
+            button22->setUniforms();
+            button22->draw();
+            button23->setUniforms();
+            button23->draw();
+            button24->setUniforms();
+            button24->draw();
+            button25->setUniforms();
+            button25->draw();
 
             // TODO: Remove naming the button
             this->fontRenderer->renderText("Spawn", spawnButton->getPos().x - 30, spawnButton->getPos().y - 5, 0.5, vec3{1, 1, 1});

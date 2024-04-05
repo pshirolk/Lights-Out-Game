@@ -35,13 +35,16 @@ void Rect::initVectors() {
             0.5f, -0.5f   // Bottom right
 
             // TODO: Initialize other buttons
+
     });
 
     this->indices.insert(indices.end(), {
             0, 1, 2, // First triangle
-            1, 2, 3  // Second triangle
+            1, 2, 3,  // Second triangle
 
             // TODO: Initialize other buttons
+            0, 1, 2, // First triangle
+            1, 2, 3,  // Second triangle
     });
 }
 // Overridden Getters from Shape
