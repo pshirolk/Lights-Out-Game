@@ -147,6 +147,7 @@ void Engine::processInput() {
         }
 
         if (mousePressedLastFrame && !mousePressed) {
+            // TODO: Have function here that turns lights on or off
             spawnConfetti();
         }
 
