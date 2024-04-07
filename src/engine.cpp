@@ -132,36 +132,6 @@ void Engine::processInput() {
             screen = play;
         }
     }
-    // Hint: one of the indices is GLFW_KEY_UP
-    if (screen == play) {
-        // TODO: Remove moving the initial button
-        if (keys[GLFW_KEY_RIGHT]) {
-            spawnButton->moveX(5);
-        }
-        if (keys[GLFW_KEY_LEFT]) {
-            spawnButton->moveX(-5);
-        }
-        if (keys[GLFW_KEY_DOWN]) {
-            spawnButton->moveY(-5);
-        }
-        if (keys[GLFW_KEY_UP]) {
-            spawnButton->moveY(5);
-        }
-
-
-        if (spawnButton->getLeft() <= 0) {
-            spawnButton->moveX(5);
-        }
-        if (spawnButton->getRight() >= width) {
-            spawnButton->moveX(-5);
-        }
-        if (spawnButton->getBottom() >= height) {
-            spawnButton->moveY(-5);
-        }
-        if (spawnButton->getTop() <= 0) {
-            spawnButton->moveY(5);
-        }
-    }
     // Mouse position is inverted because the origin of the window is in the top left corner
     MouseY = height - MouseY; // Invert y-axis of mouse position
     // TODO: Remove "overlapping" function, we only need if a mouse is pressed
