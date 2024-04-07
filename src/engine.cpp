@@ -69,10 +69,10 @@ void Engine::initShaders() {
 }
 
 void Engine::initShapes() {
-    // TODO: Make all "Buttons" here
-    // TODO: They will be our lights, and will be affected by other buttons being pressed. Use the size of 80x80
+    // All buttons we use
+
     // red spawn button centered in the top left corner
-    spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
 
     button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
     button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
@@ -134,8 +134,7 @@ void Engine::processInput() {
     }
     // Mouse position is inverted because the origin of the window is in the top left corner
     MouseY = height - MouseY; // Invert y-axis of mouse position
-    // TODO: Remove "overlapping" function, we only need if a mouse is pressed
-    //bool buttonOverlapsMouse = spawnButton->isOverlapping(vec2(MouseX, MouseY));
+
     bool mousePressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
     // TODO: We can use this following code to change the lights to on or off
@@ -203,7 +202,6 @@ void Engine::render() {
             spawnButton->setUniforms();
             spawnButton->draw();
 
-            // TODO: Initialize all buttons
             button1->setUniforms();
             button1->draw();
             button2->setUniforms();
@@ -254,9 +252,6 @@ void Engine::render() {
             button24->draw();
             button25->setUniforms();
             button25->draw();
-
-            // TODO: Remove naming the button
-            //this->fontRenderer->renderText("Spawn", spawnButton->getPos().x - 30, spawnButton->getPos().y - 5, 0.5, vec3{1, 1, 1});
 
             break;
         }
