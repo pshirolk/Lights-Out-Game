@@ -74,35 +74,35 @@ void Engine::initShapes() {
     // red spawn button centered in the top left corner
     //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
 
-    button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button4 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button5 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button4 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button5 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
 
-    button6 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button7 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button8 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button9 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button10 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button6 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button7 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button8 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button9 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button10 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
 
-    button11 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    button12 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    button13 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    button14 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    button15 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
+    button11 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
+    button12 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
+    button13 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
+    button14 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
+    button15 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
 
-    button16 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button17 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button18 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button19 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
-    button20 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{1, 0, 0, 1});
+    button16 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button17 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 1});
+    button18 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button19 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    button20 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
 
-    button21 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button22 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
-    button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{1, 0, 0, 1});
+    button21 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button22 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
 
     //vector<unique_ptr<Rect>> buttonVec;
     //buttonVec.push_back(button1); // {button1, button2, button3, button4, button5, };
