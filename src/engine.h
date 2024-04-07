@@ -38,7 +38,6 @@ private:
     unique_ptr<FontRenderer> fontRenderer;
 
     // Shapes
-    unique_ptr<Shape> spawnButton;
     unique_ptr<Shape> button1;
     unique_ptr<Shape> button2;
     unique_ptr<Shape> button3;

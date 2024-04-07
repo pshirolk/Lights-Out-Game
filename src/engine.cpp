@@ -139,11 +139,6 @@ void Engine::processInput() {
 
     // TODO: We can use this following code to change the lights to on or off
     if (screen == play) {
-        if (MouseY < spawnButton->getBottom() && MouseY > spawnButton->getTop() && MouseX < spawnButton->getRight() && MouseX > spawnButton->getLeft()) {
-            if (mousePressed) {
-                spawnButton->setColor(pressFill);
-            }
-        }
         if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
             if (mousePressed) {
                 button1->setColor(pressFill);
@@ -156,7 +151,6 @@ void Engine::processInput() {
         }
 
         if (!mousePressed) { // !buttonOverlapsMouse
-            spawnButton->setColor(originalFill);
             button1->setColor(originalFill);
         }
     }
@@ -198,9 +192,6 @@ void Engine::render() {
                 c->setUniforms();
                 c->draw();
             }
-
-            spawnButton->setUniforms();
-            spawnButton->draw();
 
             button1->setUniforms();
             button1->draw();
