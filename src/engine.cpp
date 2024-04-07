@@ -73,7 +73,7 @@ void Engine::initShapes() {
 
     // red spawn button centered in the top left corner
     //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-
+    // TODO: change red spawn button and random white button
     button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
     button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
     button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
@@ -257,13 +257,13 @@ void Engine::render() {
 }
 
 // TODO: CHANGE this confetti function, use it to affect the other buttons
-void Engine::spawnConfetti() {
+void Engine::turnLight() {
     vec2 pos = {rand() % (int)width, rand() % (int)height};
 
     vec2 size = {countConfetti, countConfetti};
     countConfetti++;
 
-    color color = {float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), 1.0f};
+    //color color = {float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), 1.0f};
     confetti.push_back(make_unique<Rect>(shapeShader, pos, size, color));
 }
 
