@@ -153,12 +153,13 @@ void Engine::processInput() {
     if (screen == play) {
         if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
             if (mousePressed) {
+
                 // Toggle the state of the button/light
-                if (button1->getColor() == hoverFill) {
-                    turnLightOff(button1);
-                } else {
-                    turnLightOn(button1);
-                }
+                //if (button1->getColor() == hoverFill) {
+                //    turnLightOff(button1);
+                //} else {
+                //    turnLightOn(button1);
+                //}
             }
         }
 
@@ -183,8 +184,8 @@ void Engine::update() {
 
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
-    if ((turnLightOff()).size() == 25)
-        screen = over;
+    //if ((turnLightOff()).size() == 25)
+    //    screen = over;
 }
 
 void Engine::render() {
@@ -208,7 +209,6 @@ void Engine::render() {
             //for (const unique_ptr<Shape>& c : confetti) {
                 //c->setUniforms();
                 //c->draw();
-            }
 
             button1->setUniforms();
             button1->draw();
