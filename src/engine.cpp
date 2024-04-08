@@ -1,11 +1,14 @@
 #include "engine.h"
 
+// TODO: change confetti function to turnLightOn (buttons are yellow) and turnLightOff (buttons are grey)
+//  functions and make related changes
+
 enum state {start, play, over};
 state screen;
 
 // Colors
 color originalFill, hoverFill, pressFill;
-int countConfetti = 1;
+int turnLight = 1;
 
 
 Engine::Engine() : keys() {
@@ -147,7 +150,7 @@ void Engine::processInput() {
 
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
-            spawnConfetti();
+            turnLight();
         }
 
         if (!mousePressed) { // !buttonOverlapsMouse
@@ -166,7 +169,7 @@ void Engine::update() {
 
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
-    if (confetti.size() == 100)
+    if (turnLightOff.size() == 25)
         screen = over;
 }
 
@@ -188,9 +191,9 @@ void Engine::render() {
         }
         case play: {
             // Render font on top of spawn button
-            for (const unique_ptr<Shape>& c : confetti) {
-                c->setUniforms();
-                c->draw();
+            //for (const unique_ptr<Shape>& c : confetti) {
+                //c->setUniforms();
+                //c->draw();
             }
 
             button1->setUniforms();
@@ -260,11 +263,11 @@ void Engine::render() {
 void Engine::turnLight() {
     vec2 pos = {rand() % (int)width, rand() % (int)height};
 
-    vec2 size = {countConfetti, countConfetti};
-    countConfetti++;
+    //vec2 size = {countConfetti, countConfetti};
+    //countConfetti++;
 
     //color color = {float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), 1.0f};
-    confetti.push_back(make_unique<Rect>(shapeShader, pos, size, color));
+    //confetti.push_back(make_unique<Rect>(shapeShader, pos, size, color));
 }
 
 bool Engine::shouldClose() {
