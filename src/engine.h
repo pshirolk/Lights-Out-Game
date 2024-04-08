@@ -90,6 +90,14 @@ public:
     /// @return 0 if successful, -1 otherwise.
     unsigned int initWindow(bool debug = false);
 
+    /// @brief Initializes turnLightOn with a specified brightness level
+    /// @param button The button whose light to turn on
+    void turnLightOn(Rect* button);
+
+    /// @brief Initializes turnLightOff
+    /// @param button The button whose light to turn off
+    void turnLightOff(Rect* button);
+
     /// @brief Loads shaders from files and stores them in the shaderManager.
     /// @details Renderers are initialized here.
     void initShaders();
@@ -97,8 +105,8 @@ public:
     /// @brief Initializes the shapes to be rendered.
     void initShapes();
 
-    /// @brief Pushes back a new colored rectangle to the confetti vector.
-    void spawnConfetti();
+    // @brief Pushes back a new colored rectangle to the confetti vector.
+    //void spawnConfetti();
 
     /// @brief Processes input from the user.
     /// @details (e.g. keyboard input, mouse input, etc.)
@@ -125,6 +133,7 @@ public:
     /// @return true if the window should close
     /// @return false if the window should not close
     bool shouldClose();
+
 
     /// Projection matrix used for 2D rendering (orthographic projection).
     /// We don't have to change this matrix since the screen size never changes.

@@ -8,8 +8,7 @@ state screen;
 
 // Colors
 color originalFill, hoverFill, pressFill;
-int turnLight = 1;
-
+//int turnLight = 1;
 
 Engine::Engine() : keys() {
     this->initWindow();
@@ -52,6 +51,16 @@ unsigned int Engine::initWindow(bool debug) {
     glfwSwapInterval(1);
 
     return 0;
+}
+
+void Engine::turnLightOn(Rect* button) {
+    // Set the color of the button to yellow when turned on
+    button->setColor(originalFill);
+}
+
+void Engine::turnLightOff(Rect* button) {
+    // Set the color of the button to grey when turned off
+    button->setColor(pressFill);
 }
 
 void Engine::initShaders() {
@@ -144,13 +153,18 @@ void Engine::processInput() {
     if (screen == play) {
         if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
             if (mousePressed) {
-                button1->setColor(pressFill);
+                // Toggle the state of the button/light
+                if (button1->getColor() == hoverFill) {
+                    turnLightOff(button1);
+                } else {
+                    turnLightOn(button1);
+                }
             }
         }
 
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
-            turnLight();
+            //turnLight();
         }
 
         if (!mousePressed) { // !buttonOverlapsMouse
@@ -169,7 +183,7 @@ void Engine::update() {
 
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
-    if (turnLightOff.size() == 25)
+    if ((turnLightOff()).size() == 25)
         screen = over;
 }
 
@@ -256,12 +270,12 @@ void Engine::render() {
         }
     }
 
-    glfwSwapBuffers(window);
-}
+    //glfwSwapBuffers(window);
+//}
 
 // TODO: CHANGE this confetti function, use it to affect the other buttons
-void Engine::turnLight() {
-    vec2 pos = {rand() % (int)width, rand() % (int)height};
+//void Engine::turnLight() {
+   // vec2 pos = {rand() % (int)width, rand() % (int)height};
 
     //vec2 size = {countConfetti, countConfetti};
     //countConfetti++;
