@@ -47,7 +47,6 @@ private:
                                          std::move(button22), std::move(button23), std::move(button24),
                                          std::move(button25)};
 
-
     // Shapes
     unique_ptr<Shape> button1;
     unique_ptr<Shape> button2;

@@ -119,7 +119,6 @@ void Engine::initShapes() {
 
 void Engine::processInput() {
     glfwPollEvents();
-    //
     // Set keys to true if pressed, false if released
     for (int key = 0; key < 1024; ++key) {
         if (glfwGetKey(window, key) == GLFW_PRESS)
