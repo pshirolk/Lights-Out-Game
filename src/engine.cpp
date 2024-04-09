@@ -53,15 +53,29 @@ unsigned int Engine::initWindow(bool debug) {
     return 0;
 }
 
-void Engine::turnLightOn(Rect* button) {
+void Engine::turnLight(unique_ptr<Shape> b) {
     // Set the color of the button to yellow when turned on
-    button->setColor(originalFill);
+    // TODO: Move this so we dont need to move b out of the buttonVec
+    int count = 0;
+    int savedCount = 0;
+    for (count = 0; count < buttonVec.size(); count++) {
+        if (buttonVec[count] == b) {
+            savedCount = count;
+        }
+    }
+    checkLight(savedCount);
+
+}
+// TODO: Create checker for if a light is on or off.
+void Engine::checkLight(int saved) {
+    if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
+        buttonVec[saved]->setColor(originalFill);
+    }
+    else {
+        buttonVec[saved]->setColor(pressFill);
+    }
 }
 
-void Engine::turnLightOff(Rect* button) {
-    // Set the color of the button to grey when turned off
-    button->setColor(pressFill);
-}
 
 void Engine::initShaders() {
     // load shader manager
@@ -85,7 +99,6 @@ void Engine::initShapes() {
 
     // red spawn button centered in the top left corner
     //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    // TODO: change red spawn button and random white button
     button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
     button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
     button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
@@ -145,27 +158,16 @@ void Engine::processInput() {
 
     bool mousePressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
-    // TODO: We can use this following code to change the lights to on or off
     if (screen == play) {
-        if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-            if (mousePressed) {
+        //if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
 
-                // Toggle the state of the button/light
-                //if (button1->getColor() == hoverFill) {
-                //    turnLightOff(button1);
-                //} else {
-                //    turnLightOn(button1);
-                //}
-            }
-        }
+        //}
 
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
-            //turnLight();
-        }
-
-        if (!mousePressed) { // !buttonOverlapsMouse
-            button1->setColor(originalFill);
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(std::move(buttonVec[0]));
+            }
         }
     }
     // Save mousePressed for next frame
@@ -266,8 +268,8 @@ void Engine::render() {
         }
     }
 
-    //glfwSwapBuffers(window);
-//}
+    glfwSwapBuffers(window);
+}
 
 // TODO: CHANGE this confetti function, use it to affect the other buttons
 //void Engine::turnLight() {
@@ -278,7 +280,7 @@ void Engine::render() {
 
     //color color = {float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), 1.0f};
     //confetti.push_back(make_unique<Rect>(shapeShader, pos, size, color));
-}
+//}
 
 bool Engine::shouldClose() {
     return glfwWindowShouldClose(window);
