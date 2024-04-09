@@ -116,7 +116,7 @@ void Engine::initShapes() {
     button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
     button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
 
-    //vector<unique_ptr<Rect>> buttonVec;
+    vector<unique_ptr<Shape>> buttonVec;
     //buttonVec.push_back(button1); // {button1, button2, button3, button4, button5, };
 }
 
