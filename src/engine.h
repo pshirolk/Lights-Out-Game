@@ -102,7 +102,7 @@ public:
 
     /// @brief Initializes turnLightOn with a specified brightness level
     /// @param button The button whose light to turn on
-    void turnLight(unique_ptr<Shape> b);
+    void turnLight(int saved);
 
     void checkLight(int saved);
     /// @brief Loads shaders from files and stores them in the shaderManager.

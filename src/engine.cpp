@@ -53,25 +53,53 @@ unsigned int Engine::initWindow(bool debug) {
     return 0;
 }
 
-void Engine::turnLight(unique_ptr<Shape> b) {
-    // Set the color of the button to yellow when turned on
-    // TODO: Move this so we dont need to move b out of the buttonVec
-    int savedCount = 0;
-    for (int count = 0; count < buttonVec.size(); count++) {
-        if (buttonVec[count] == b) {
-            savedCount = count;
-        }
-    }
-    checkLight(savedCount);
+void Engine::turnLight(int saved) {
+    // Change color of initial button
+    checkLight(saved);
 
+    //Check LHS
+    if (saved == 0 || saved == 5 || saved == 10 || saved == 20) {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved+1);
+    }
+
+    //Check RHS
+    else if (saved == 4 || saved == 9 || saved == 14 || saved == 19 || saved == 24) {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved-1);
+    }
+
+    //Check all else
+    else {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved-1);
+        checkLight(saved+1);
+    }
 }
 // TODO: Create checker for if a light is on or off.
 void Engine::checkLight(int saved) {
     if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
-        buttonVec[saved]->setColor(originalFill);
+        //If the original color, set to "lit" color
+        buttonVec[saved]->setColor(pressFill);
     }
     else {
-        buttonVec[saved]->setColor(pressFill);
+        //If not, set back to original color
+        buttonVec[saved]->setColor(originalFill);
     }
 }
 
@@ -158,15 +186,92 @@ void Engine::processInput() {
     bool mousePressed = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS;
 
     if (screen == play) {
-        //if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-
-        //}
-
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
             if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(std::move(buttonVec[0]));
+                turnLight(0);
             }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+                turnLight(0);
+            }
+
+
+//
+//            int savedCount = 0;
+//            for (int count = 0; count < buttonVec.size(); count++) {
+//                if (buttonVec[count] == b) {
+//                    savedCount = count;
+//                }
+//            }
         }
     }
     // Save mousePressed for next frame
