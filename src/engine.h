@@ -37,6 +37,11 @@ private:
     /// @details Initialized in initShaders()
     unique_ptr<FontRenderer> fontRenderer;
 
+    // Shapes
+    unique_ptr<Shape> button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,
+                    button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,
+                    button21,button22,button23,button24,button25;
+
     vector<unique_ptr<Shape>> buttonVec {std::move(button1), std::move(button2), std::move(button3),
                                          std::move(button4), std::move(button5), std::move(button6),
                                          std::move(button7), std::move(button8), std::move(button9),
@@ -46,35 +51,6 @@ private:
                                          std::move(button19), std::move(button20), std::move(button21),
                                          std::move(button22), std::move(button23), std::move(button24),
                                          std::move(button25)};
-
-    // Shapes
-    unique_ptr<Shape> button1;
-    unique_ptr<Shape> button2;
-    unique_ptr<Shape> button3;
-    unique_ptr<Shape> button4;
-    unique_ptr<Shape> button5;
-    unique_ptr<Shape> button6;
-    unique_ptr<Shape> button7;
-    unique_ptr<Shape> button8;
-    unique_ptr<Shape> button9;
-    unique_ptr<Shape> button10;
-    unique_ptr<Shape> button11;
-    unique_ptr<Shape> button12;
-    unique_ptr<Shape> button13;
-    unique_ptr<Shape> button14;
-    unique_ptr<Shape> button15;
-    unique_ptr<Shape> button16;
-    unique_ptr<Shape> button17;
-    unique_ptr<Shape> button18;
-    unique_ptr<Shape> button19;
-    unique_ptr<Shape> button20;
-    unique_ptr<Shape> button21;
-    unique_ptr<Shape> button22;
-    unique_ptr<Shape> button23;
-    unique_ptr<Shape> button24;
-    unique_ptr<Shape> button25;
-
-    vector<unique_ptr<Shape>> confetti;
 
     // Shaders
     Shader shapeShader;
