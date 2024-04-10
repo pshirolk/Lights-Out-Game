@@ -53,56 +53,6 @@ unsigned int Engine::initWindow(bool debug) {
     return 0;
 }
 
-void Engine::turnLight(int saved) {
-    // Change color of initial button
-    checkLight(saved);
-
-    //Check LHS
-    if (saved == 0 || saved == 5 || saved == 10 || saved == 20) {
-        if (saved > 4) {
-            checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
-        }
-        checkLight(saved+1);
-    }
-
-    //Check RHS
-    else if (saved == 4 || saved == 9 || saved == 14 || saved == 19 || saved == 24) {
-        if (saved > 4) {
-            checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
-        }
-        checkLight(saved-1);
-    }
-
-    //Check all else
-    else {
-        if (saved > 4) {
-            checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
-        }
-        checkLight(saved-1);
-        checkLight(saved+1);
-    }
-}
-
-void Engine::checkLight(int saved) {
-    if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
-        //If the original color, set to "lit" color
-        buttonVec[saved]->setColor(pressFill);
-    }
-    else {
-        //If not, set back to original color
-        buttonVec[saved]->setColor(originalFill);
-    }
-}
-
 
 void Engine::initShaders() {
     // load shader manager
@@ -288,8 +238,8 @@ void Engine::update() {
     // TODO: Change this to end when all lights are off
     //if ((turnLightOff()).size() == 25)
     int count = 0;
-    for (const auto & i : buttonVec) {
-        if (i->getRed() == 255 && i->getBlue() == 255 && i->getGreen() == 0) {
+    for (const unique_ptr<Shape>& b : buttonVec) {
+        if (b->getRed() == 255 && b->getBlue() == 255 && b->getGreen() == 0) {
             count++;
         }
         if (buttonVec.size() > count) {
@@ -319,57 +269,60 @@ void Engine::render() {
             //for (const unique_ptr<Shape>& c : confetti) {
                 //c->setUniforms();
                 //c->draw();
-
-            button1->setUniforms();
-            button1->draw();
-            button2->setUniforms();
-            button2->draw();
-            button3->setUniforms();
-            button3->draw();
-            button4->setUniforms();
-            button4->draw();
-            button5->setUniforms();
-            button5->draw();
-            button6->setUniforms();
-            button6->draw();
-            button7->setUniforms();
-            button7->draw();
-            button8->setUniforms();
-            button8->draw();
-            button9->setUniforms();
-            button9->draw();
-            button10->setUniforms();
-            button10->draw();
-            button11->setUniforms();
-            button11->draw();
-            button12->setUniforms();
-            button12->draw();
-            button13->setUniforms();
-            button13->draw();
-            button14->setUniforms();
-            button14->draw();
-            button15->setUniforms();
-            button15->draw();
-            button16->setUniforms();
-            button16->draw();
-            button17->setUniforms();
-            button17->draw();
-            button18->setUniforms();
-            button18->draw();
-            button19->setUniforms();
-            button19->draw();
-            button20->setUniforms();
-            button20->draw();
-            button21->setUniforms();
-            button21->draw();
-            button22->setUniforms();
-            button22->draw();
-            button23->setUniforms();
-            button23->draw();
-            button24->setUniforms();
-            button24->draw();
-            button25->setUniforms();
-            button25->draw();
+            for (const unique_ptr<Shape>& b : buttonVec) {
+                b->setUniforms();
+                b->draw();
+              }
+//            button1->setUniforms();
+//            button1->draw();
+//            button2->setUniforms();
+//            button2->draw();
+//            button3->setUniforms();
+//            button3->draw();
+//            button4->setUniforms();
+//            button4->draw();
+//            button5->setUniforms();
+//            button5->draw();
+//            button6->setUniforms();
+//            button6->draw();
+//            button7->setUniforms();
+//            button7->draw();
+//            button8->setUniforms();
+//            button8->draw();
+//            button9->setUniforms();
+//            button9->draw();
+//            button10->setUniforms();
+//            button10->draw();
+//            button11->setUniforms();
+//            button11->draw();
+//            button12->setUniforms();
+//            button12->draw();
+//            button13->setUniforms();
+//            button13->draw();
+//            button14->setUniforms();
+//            button14->draw();
+//            button15->setUniforms();
+//            button15->draw();
+//            button16->setUniforms();
+//            button16->draw();
+//            button17->setUniforms();
+//            button17->draw();
+//            button18->setUniforms();
+//            button18->draw();
+//            button19->setUniforms();
+//            button19->draw();
+//            button20->setUniforms();
+//            button20->draw();
+//            button21->setUniforms();
+//            button21->draw();
+//            button22->setUniforms();
+//            button22->draw();
+//            button23->setUniforms();
+//            button23->draw();
+//            button24->setUniforms();
+//            button24->draw();
+//            button25->setUniforms();
+//            button25->draw();
 
             break;
         }
@@ -384,15 +337,55 @@ void Engine::render() {
 }
 
 // TODO: CHANGE this confetti function, use it to affect the other buttons
-//void Engine::turnLight() {
-   // vec2 pos = {rand() % (int)width, rand() % (int)height};
+void Engine::turnLight(int saved) {
+    // Change color of initial button
+    checkLight(saved);
 
-    //vec2 size = {countConfetti, countConfetti};
-    //countConfetti++;
+    //Check LHS
+    if (saved == 0 || saved == 5 || saved == 10 || saved == 20) {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved+1);
+    }
 
-    //color color = {float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), float(rand() % 10 / 10.0), 1.0f};
-    //confetti.push_back(make_unique<Rect>(shapeShader, pos, size, color));
-//}
+        //Check RHS
+    else if (saved == 4 || saved == 9 || saved == 14 || saved == 19 || saved == 24) {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved-1);
+    }
+
+        //Check all else
+    else {
+        if (saved > 4) {
+            checkLight(saved-5);
+            if (saved < 19) {
+                checkLight(saved+5);
+            }
+        }
+        checkLight(saved-1);
+        checkLight(saved+1);
+    }
+}
+
+void Engine::checkLight(int saved) {
+    if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
+        //If the original color, set to "lit" color
+        buttonVec[saved]->setColor(pressFill);
+    }
+    else {
+        //If not, set back to original color
+        buttonVec[saved]->setColor(originalFill);
+    }
+}
 
 bool Engine::shouldClose() {
     return glfwWindowShouldClose(window);
