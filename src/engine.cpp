@@ -245,7 +245,6 @@ void Engine::update() {
 
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
-    //if ((turnLightOff()).size() == 25)
     int count = 0;
     for (const unique_ptr<Shape>& b : buttonVec) {
         vec3 color = b->getColor3();
