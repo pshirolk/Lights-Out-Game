@@ -93,7 +93,7 @@ void Engine::initShapes() {
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
 
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
-    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
@@ -147,81 +147,89 @@ void Engine::processInput() {
     if (screen == play) {
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
+            for (const auto& button : buttonVec) {
+                if (MouseY < button->getBottom() && MouseY > button->getTop() &&
+                    MouseX < button->getRight() && MouseX > button->getLeft()) {
+                    turnLight(0);
+                    break;
+                }
             }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
-            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-                turnLight(0);
-            }
+
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
+//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
+//                turnLight(0);
+//            }
 
 
 //
@@ -345,7 +353,7 @@ void Engine::render() {
     glfwSwapBuffers(window);
 }
 
-// TODO: CHANGE this confetti function, use it to affect the other buttons
+// TODO: Function changes color of button and affects the other buttons
 void Engine::turnLight(int saved) {
     // Change color of initial button
     checkLight(saved);
