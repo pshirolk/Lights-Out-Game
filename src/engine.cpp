@@ -104,15 +104,6 @@ void Engine::initShapes() {
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
 
-//    buttonVec  {std::move(button1), std::move(button2), std::move(button3),
-//                std::move(button4), std::move(button5), std::move(button6),
-//                std::move(button7), std::move(button8), std::move(button9),
-//                std::move(button10), std::move(button11), std::move(button12),
-//                std::move(button13), std::move(button14), std::move(button15),
-//                std::move(button16), std::move(button17), std::move(button18),
-//                std::move(button19), std::move(button20), std::move(button21),
-//                std::move(button22), std::move(button23), std::move(button24),
-//                std::move(button25)};
 }
 
 
@@ -210,56 +201,7 @@ void Engine::render() {
                 b->setUniforms();
                 b->draw();
               }
-//            button1->setUniforms();
-//            button1->draw();
-//            button2->setUniforms();
-//            button2->draw();
-//            button3->setUniforms();
-//            button3->draw();
-//            button4->setUniforms();
-//            button4->draw();
-//            button5->setUniforms();
-//            button5->draw();
-//            button6->setUniforms();
-//            button6->draw();
-//            button7->setUniforms();
-//            button7->draw();
-//            button8->setUniforms();
-//            button8->draw();
-//            button9->setUniforms();
-//            button9->draw();
-//            button10->setUniforms();
-//            button10->draw();
-//            button11->setUniforms();
-//            button11->draw();
-//            button12->setUniforms();
-//            button12->draw();
-//            button13->setUniforms();
-//            button13->draw();
-//            button14->setUniforms();
-//            button14->draw();
-//            button15->setUniforms();
-//            button15->draw();
-//            button16->setUniforms();
-//            button16->draw();
-//            button17->setUniforms();
-//            button17->draw();
-//            button18->setUniforms();
-//            button18->draw();
-//            button19->setUniforms();
-//            button19->draw();
-//            button20->setUniforms();
-//            button20->draw();
-//            button21->setUniforms();
-//            button21->draw();
-//            button22->setUniforms();
-//            button22->draw();
-//            button23->setUniforms();
-//            button23->draw();
-//            button24->setUniforms();
-//            button24->draw();
-//            button25->setUniforms();
-//            button25->draw();
+
 
             break;
         }
