@@ -251,7 +251,7 @@ void Engine::update() {
         if (color[0]== originalFill.red && color[1] == originalFill.green && color[2] == originalFill.blue){
             count++;
         }
-        if (buttonVec.size() > count) {
+        if (buttonVec.size() <= count) {
             screen = over;
         }
     }
