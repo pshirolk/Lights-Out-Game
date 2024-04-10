@@ -159,90 +159,6 @@ void Engine::processInput() {
                 counter++;
             }
 
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-//            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
-//                turnLight(0);
-//            }
-
-
-//
-//            int savedCount = 0;
-//            for (int count = 0; count < buttonVec.size(); count++) {
-//                if (buttonVec[count] == b) {
-//                    savedCount = count;
-//                }
-//            }
         }
     }
     // Save mousePressed for next frame
@@ -363,17 +279,17 @@ void Engine::turnLight(int saved) {
     checkLight(saved);
 
     //Check LHS
-    if (saved == 0 || saved == 5 || saved == 10 || saved == 20) {
+    if (saved == 0 || saved == 5 || saved == 10 || saved == 15 || saved == 20) {
         if (saved > 4) {
-            checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
+            checkLight(saved - 5);
+        }
+        if (saved < 19) {
+            checkLight(saved+5);
         }
         checkLight(saved+1);
     }
 
-        //Check RHS
+    //Check RHS
     else if (saved == 4 || saved == 9 || saved == 14 || saved == 19 || saved == 24) {
         if (saved > 4) {
             checkLight(saved-5);
@@ -398,13 +314,18 @@ void Engine::turnLight(int saved) {
 }
 
 void Engine::checkLight(int saved) {
-    if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
+    if (buttonVec[saved]->getRed() == 1 && buttonVec[saved]->getBlue() == 1 && buttonVec[saved]->getGreen() == 1) {
         //If the original color, set to "lit" color
-        buttonVec[saved]->setColor(pressFill);
+        //buttonVec[saved]->setColor(pressFill);
+        buttonVec[saved]->setRed(1);
+        buttonVec[saved]->setGreen(1);
+        buttonVec[saved]->setBlue(0);
     }
     else {
         //If not, set back to original color
-        buttonVec[saved]->setColor(originalFill);
+        buttonVec[saved]->setRed(1);
+        buttonVec[saved]->setGreen(1);
+        buttonVec[saved]->setBlue(1);
     }
 }
 
