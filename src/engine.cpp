@@ -56,9 +56,8 @@ unsigned int Engine::initWindow(bool debug) {
 void Engine::turnLight(unique_ptr<Shape> b) {
     // Set the color of the button to yellow when turned on
     // TODO: Move this so we dont need to move b out of the buttonVec
-    int count = 0;
     int savedCount = 0;
-    for (count = 0; count < buttonVec.size(); count++) {
+    for (int count = 0; count < buttonVec.size(); count++) {
         if (buttonVec[count] == b) {
             savedCount = count;
         }
