@@ -73,39 +73,48 @@ void Engine::initShaders() {
 
 void Engine::initShapes() {
     // All buttons we use
-
-    // red spawn button centered in the top left corner
     //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
-    button1 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button2 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button3 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button4 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button5 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1}));
 
-    button6 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button7 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button8 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button9 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button10 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 + 100}, vec2{80, 80}, color{255, 255, 0, 1}));
 
-    button11 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
-    button12 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
-    button13 = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
-    button14 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
-    button15 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1});
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2}, vec2{80, 80}, color{255, 255, 0, 1}));
 
-    button16 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button17 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 1});
-    button18 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button19 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
-    button20 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1});
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 100}, vec2{80, 80}, color{255, 255, 0, 1}));
 
-    button21 = make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button22 = make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button23 = make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button24 = make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
-    button25 = make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1});
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 100,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+    this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 + 200,height/2 - 200}, vec2{80, 80}, color{255, 255, 0, 1}));
+
+//    buttonVec  {std::move(button1), std::move(button2), std::move(button3),
+//                std::move(button4), std::move(button5), std::move(button6),
+//                std::move(button7), std::move(button8), std::move(button9),
+//                std::move(button10), std::move(button11), std::move(button12),
+//                std::move(button13), std::move(button14), std::move(button15),
+//                std::move(button16), std::move(button17), std::move(button18),
+//                std::move(button19), std::move(button20), std::move(button21),
+//                std::move(button22), std::move(button23), std::move(button24),
+//                std::move(button25)};
 }
+
 
 void Engine::processInput() {
     glfwPollEvents();
@@ -239,7 +248,8 @@ void Engine::update() {
     //if ((turnLightOff()).size() == 25)
     int count = 0;
     for (const unique_ptr<Shape>& b : buttonVec) {
-        if (b->getRed() == 255 && b->getBlue() == 255 && b->getGreen() == 0) {
+        vec3 color = b->getColor3();
+        if (color[0]== originalFill.red && color[1] == originalFill.green && color[2] == originalFill.blue){
             count++;
         }
         if (buttonVec.size() > count) {
