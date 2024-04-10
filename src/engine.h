@@ -42,15 +42,7 @@ private:
                     button11,button12,button13,button14,button15,button16,button17,button18,button19,button20,
                     button21,button22,button23,button24,button25;
 
-    vector<unique_ptr<Shape>> buttonVec {std::move(button1), std::move(button2), std::move(button3),
-                                         std::move(button4), std::move(button5), std::move(button6),
-                                         std::move(button7), std::move(button8), std::move(button9),
-                                         std::move(button10), std::move(button11), std::move(button12),
-                                         std::move(button13), std::move(button14), std::move(button15),
-                                         std::move(button16), std::move(button17), std::move(button18),
-                                         std::move(button19), std::move(button20), std::move(button21),
-                                         std::move(button22), std::move(button23), std::move(button24),
-                                         std::move(button25)};
+    vector<unique_ptr<Shape>> buttonVec;
 
     // Shaders
     Shader shapeShader;
