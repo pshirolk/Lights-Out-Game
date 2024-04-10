@@ -91,7 +91,7 @@ void Engine::turnLight(int saved) {
         checkLight(saved+1);
     }
 }
-// TODO: Create checker for if a light is on or off.
+
 void Engine::checkLight(int saved) {
     if (buttonVec[saved]->getRed() == 255 && buttonVec[saved]->getBlue() == 255 && buttonVec[saved]->getGreen() == 0) {
         //If the original color, set to "lit" color
@@ -287,7 +287,15 @@ void Engine::update() {
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
     //if ((turnLightOff()).size() == 25)
-    //    screen = over;
+    int count = 0;
+    for (const auto & i : buttonVec) {
+        if (i->getRed() == 255 && i->getBlue() == 255 && i->getGreen() == 0) {
+            count++;
+        }
+        if (buttonVec.size() > count) {
+            screen = over;
+        }
+    }
 }
 
 void Engine::render() {
