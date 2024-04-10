@@ -1,7 +1,6 @@
 #include "engine.h"
 
-// TODO: change confetti function to turnLightOn (buttons are yellow) and turnLightOff (buttons are grey)
-//  functions and make related changes
+// TODO: hover effect when you are on a button
 
 enum state {start, play, over};
 state screen;
@@ -193,10 +192,6 @@ void Engine::render() {
             break;
         }
         case play: {
-            // Render font on top of spawn button
-            //for (const unique_ptr<Shape>& c : confetti) {
-                //c->setUniforms();
-                //c->draw();
             for (const unique_ptr<Shape>& b : buttonVec) {
                 b->setUniforms();
                 b->draw();
@@ -234,10 +229,10 @@ void Engine::turnLight(int saved) {
     //Check RHS
     else if (saved == 4 || saved == 9 || saved == 14 || saved == 19 || saved == 24) {
         if (saved > 4) {
-            checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
+            checkLight(saved - 5);
+        }
+        if (saved < 19) {
+            checkLight(saved+5);
         }
         checkLight(saved-1);
     }
