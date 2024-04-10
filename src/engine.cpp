@@ -147,12 +147,16 @@ void Engine::processInput() {
     if (screen == play) {
         if (mousePressedLastFrame && !mousePressed) {
             // TODO: Have function here that turns lights on or off
+            int counter = 0;
             for (const auto& button : buttonVec) {
                 if (MouseY < button->getBottom() && MouseY > button->getTop() &&
                     MouseX < button->getRight() && MouseX > button->getLeft()) {
-                    turnLight(0);
+                    // find index of button and change color
+
+                    turnLight(counter);
                     break;
                 }
+                counter++;
             }
 
 //            if (MouseY < button1->getBottom() && MouseY > button1->getTop() && MouseX < button1->getRight() && MouseX > button1->getLeft()) {
