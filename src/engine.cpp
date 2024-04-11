@@ -187,21 +187,17 @@ void Engine::render() {
         case start: {
             string title = "Lights Out!";
             // displayed at top of screen
-            //this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 8, 1, vec3{1, 1, 1});
-            // Instructions
             this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 1.25, 1, vec3{1, 1, 1});
 
             // Each instruction
-            string sentence1 = "Click on a cell to toggle that cell and all of its immediate neighbors.";
+            string sentence1 = "Click on a button to toggle it and all of its immediate neighbors.";
             string sentence2 = "Click again to untoggle.";
-            string sentence3 = "The goal of this game is to switch off all the lights with the least number of clicks.";
+            string sentence3 = "Switch off all the lights with the least number of clicks.";
 
             // Positioning
-            this->fontRenderer->renderText(sentence1, width / 2 - (5 * title.length()), height / 2 - 50, 0.7,
-                                           vec3{1, 1, 1});
-            this->fontRenderer->renderText(sentence2, width / 2 - (5 * title.length()), height / 2, 0.7, vec3{1, 1, 1});
-            this->fontRenderer->renderText(sentence3, width / 2 - (5 * title.length()), height / 2 + 50, 0.7,
-                                           vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence1, width / 2 - (5 * title.length()), height / 2 - 50, 0.8,vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence2, width / 2 - (5 * title.length()), height / 2, 0.8, vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence3, width / 2 - (5 * title.length()), height / 2 + 50, 0.8,vec3{1, 1, 1});
 
             string message = "Press s to start";
             // (12 * message.length()) is the offset to center text.
