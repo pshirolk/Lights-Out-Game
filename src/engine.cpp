@@ -186,8 +186,8 @@ void Engine::render() {
     switch (screen) {
         case start: {
             string title = "Lights Out!";
-            // displayed at top of screen
-            this->fontRenderer->renderText(title, width / 2 - (12 * title.length()), height / 1.25, 1.5, vec3{1, 1, 1});
+            // Displayed at top of screen
+            this->fontRenderer->renderText(title, width / 2 - (20 * title.length()), height / 1.25, 1.75, vec3{1, 0.984, 0});
 
             // Each instruction
             string sentence1 = "Click on a button to toggle it and its immediate neighbors.";
@@ -195,14 +195,14 @@ void Engine::render() {
             string sentence3 = "Switch off all the lights with the least number of clicks.";
 
             // Positioning
-            this->fontRenderer->renderText(sentence1, width / 6.5 - (5 * title.length()), height / 2 + 50, 0.5,vec3{1, 1, 1});
-            this->fontRenderer->renderText(sentence2, width / 6.5 - (5 * title.length()), height / 2, 0.5, vec3{1, 1, 1});
-            this->fontRenderer->renderText(sentence3, width / 6.5 - (5 * title.length()), height / 2 - 50, 0.5,vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence1, width / 6.5 - (5 * title.length()), height / 2 + 50, 0.5,vec3{0.871, 0.055, 0.8});
+            this->fontRenderer->renderText(sentence2, width / 6.5 - (5 * title.length()), height / 2, 0.5, vec3{0.871, 0.055, 0.8});
+            this->fontRenderer->renderText(sentence3, width / 6.5 - (5 * title.length()), height / 2 - 50, 0.5,vec3{0.871, 0.055, 0.8});
 
             string message = "Press s to start";
             // (12 * message.length()) is the offset to center text.
             // 12 pixels is the width of each character scaled by 1.
-            this->fontRenderer->renderText(message, width / 2 - (12 * message.length()), height / 5, 1.2, vec3{1, 1, 1});
+            this->fontRenderer->renderText(message, width / 2 - (12 * message.length()), height / 5, 1, vec3{0.286, 0.267, 0.812});
             break;
         }
         case play: {
