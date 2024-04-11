@@ -220,7 +220,7 @@ void Engine::turnLight(int saved) {
         if (saved > 4) {
             checkLight(saved - 5);
         }
-        if (saved < 19) {
+        if (saved <= 19) {
             checkLight(saved+5);
         }
         checkLight(saved+1);
@@ -231,7 +231,7 @@ void Engine::turnLight(int saved) {
         if (saved > 4) {
             checkLight(saved - 5);
         }
-        if (saved < 19) {
+        if (saved <= 19) {
             checkLight(saved+5);
         }
         checkLight(saved-1);
@@ -241,10 +241,11 @@ void Engine::turnLight(int saved) {
     else {
         if (saved > 4) {
             checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
         }
+        if (saved < 19) {
+            checkLight(saved+5);
+        }
+
         checkLight(saved-1);
         checkLight(saved+1);
     }
