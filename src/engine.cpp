@@ -164,9 +164,8 @@ void Engine::update() {
     // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
     int count = 0;
-    for (const unique_ptr<Shape>& b : buttonVec) {
-        vec3 color = b->getColor3();
-        if (color[0]== originalFill.red && color[1] == originalFill.green && color[2] == originalFill.blue){
+    for (int i = 0; i < buttonVec.size(); i++) {
+        if (buttonVec[i]->getRed() == 1 && buttonVec[i]->getGreen() == 1 && buttonVec[i]->getBlue() == 1){//color[0]== originalFill.red && color[1] == originalFill.green && color[2] == originalFill.blue){
             count++;
         }
         if (buttonVec.size() <= count) {
@@ -243,7 +242,7 @@ void Engine::turnLight(int saved) {
         if (saved > 4) {
             checkLight(saved - 5);
         }
-        if (saved < 19) {
+        if (saved <= 19) {
             checkLight(saved+5);
         }
         checkLight(saved-1);
@@ -253,9 +252,9 @@ void Engine::turnLight(int saved) {
     else {
         if (saved > 4) {
             checkLight(saved-5);
-            if (saved < 19) {
-                checkLight(saved+5);
-            }
+        }
+        if (saved <= 19) {
+            checkLight(saved+5);
         }
         checkLight(saved-1);
         checkLight(saved+1);
