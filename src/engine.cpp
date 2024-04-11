@@ -213,7 +213,7 @@ void Engine::render() {
 
             // Display number of moves made
             string moves = "Moves: ";
-            fontRenderer->renderText(moves, width/3 - (12 * moves.length()),height-30, 0.5, vec3{1, 1, 1});
+            fontRenderer->renderText(moves, width/3 - (12 * moves.length()),height-32, 0.6, vec3{1, 1, 1});
             break;
         }
         case over: {
