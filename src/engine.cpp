@@ -205,7 +205,6 @@ void Engine::render() {
             break;
         }
     }
-
     glfwSwapBuffers(window);
 }
 
