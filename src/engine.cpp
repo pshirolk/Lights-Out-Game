@@ -185,12 +185,11 @@ void Engine::render() {
     // Render differently depending on screen
     switch (screen) {
         case start: {
-            string title = "Lights Out";
+            string title = "Lights Out!";
             // displayed at top of screen
-            this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 8, 1, vec3{1, 1, 1});
-
+            //this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 8, 1, vec3{1, 1, 1});
             // Instructions
-            this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 8, 1, vec3{1, 1, 1});
+            this->fontRenderer->renderText(title, width / 2 - (10 * title.length()), height / 1.25, 1, vec3{1, 1, 1});
 
             // Each instruction
             string sentence1 = "Click on a cell to toggle that cell and all of its immediate neighbors.";
