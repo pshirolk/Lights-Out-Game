@@ -97,4 +97,5 @@ float Shape::getGreen() const   { return color.green; }
 float Shape::getBlue() const    { return color.blue; }
 float Shape::getOpacity() const { return color.alpha; }
 
+
 void Shape::update(float deltaTime) {}

@@ -7,7 +7,7 @@ state screen;
 
 // Colors
 color originalFill, hoverFill, pressFill;
-//int turnLight = 1;
+
 
 Engine::Engine() : keys() {
     this->initWindow();
@@ -136,12 +136,12 @@ void Engine::processInput() {
 
     if (screen == play) {
         if (mousePressedLastFrame && !mousePressed) {
-            // TODO: Have function here that turns lights on or off
+            // Function turns lights on or off
             int counter = 0;
             for (const auto& button : buttonVec) {
                 if (MouseY < button->getBottom() && MouseY > button->getTop() &&
                     MouseX < button->getRight() && MouseX > button->getLeft()) {
-                    // find index of button and change color
+
 
                     turnLight(counter);
                     break;
@@ -161,7 +161,6 @@ void Engine::update() {
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
 
-    // If the size of the confetti vector reaches 100, change screen to over
     // TODO: Change this to end when all lights are off
     int count = 0;
     for (const unique_ptr<Shape>& b : buttonVec) {
@@ -183,16 +182,35 @@ void Engine::render() {
     shapeShader.use();
 
     // Render differently depending on screen
-    switch (screen) {
+    switch (screen){
         case start: {
+            string title = "Lights Out";
+            // displayed at top of screen
+            this->fontRenderer->renderText(title, width/2 - (10 * title.length()), height/8, 1, vec3{1, 1, 1});
+
+            // Instructions
+            this->fontRenderer->renderText(title, width/2 - (10 * title.length()), height/8, 1, vec3{1, 1, 1});
+
+            // Each instruction
+            string sentence1 = "Click on a cell to toggle that cell and all of its immediate neighbors.";
+            string sentence2 = "Click again to untoggle.";
+            string sentence3 = "The goal of this game is to switch off all the lights with the least number of clicks.";
+
+            // Positioning
+            this->fontRenderer->renderText(sentence1, width/2 - (5 * title.length()), height/2 - 50, 0.7, vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence2, width/2 - (5 * title.length()), height/2, 0.7, vec3{1, 1, 1});
+            this->fontRenderer->renderText(sentence3, width/2 - (5 * title.length()), height/2 + 50, 0.7, vec3{1, 1, 1});
+
             string message = "Press s to start";
             // (12 * message.length()) is the offset to center text.
             // 12 pixels is the width of each character scaled by 1.
-            this->fontRenderer->renderText(message, width/2 - (12 * message.length()), height/2, 1, vec3{1, 1, 1});
+            this->fontRenderer->renderText(message, width/2 - (12 * message.length()), height/4, 1, vec3{1, 1, 1});
             break;
+
         }
         case play: {
             for (const unique_ptr<Shape>& b : buttonVec) {
+
                 b->setUniforms();
                 b->draw();
               }
