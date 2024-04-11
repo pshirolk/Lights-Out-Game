@@ -184,7 +184,7 @@ void Engine::render() {
     // Render differently depending on screen
     switch (screen) {
         case start: {
-            string message = "Press s (all lights) or r (random lights) to start:";
+            string message = "Press s to start:";
             // (12 * message.length()) is the o ffset to center text.
             // 12 pixels is the width of each character scaled by 1.
             this->fontRenderer->renderText(message, width/2 - (12 * message.length()), height/2, 1, vec3{1, 1, 1});
