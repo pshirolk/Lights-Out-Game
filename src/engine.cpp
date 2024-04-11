@@ -245,7 +245,6 @@ void Engine::turnLight(int saved) {
         if (saved < 19) {
             checkLight(saved+5);
         }
-
         checkLight(saved-1);
         checkLight(saved+1);
     }
