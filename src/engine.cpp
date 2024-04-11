@@ -162,11 +162,10 @@ void Engine::update() {
     lastFrame = currentFrame;
 
     // If the size of the confetti vector reaches 100, change screen to over
-    // TODO: Change this to end when all lights are off
     int count = 0;
-    for (const unique_ptr<Shape>& b : buttonVec) {
-        vec3 color = b->getColor3();
-        if (color[0]== originalFill.red && color[1] == originalFill.green && color[2] == originalFill.blue){
+    for (int i = 0; buttonVec.size() > i; i++){//const unique_ptr<Shape>& b : buttonVec) {
+        vec3 color = buttonVec[i]->getColor3();
+        if (buttonVec[i]->getRed() == 1 && buttonVec[i]->getGreen() == 1 && buttonVec[i]->getBlue() == 1){
             count++;
         }
         if (buttonVec.size() <= count) {
@@ -210,7 +209,6 @@ void Engine::render() {
     glfwSwapBuffers(window);
 }
 
-// TODO: Function changes color of button and affects the other buttons
 void Engine::turnLight(int saved) {
     // Change color of initial button
     checkLight(saved);
