@@ -1,6 +1,9 @@
 #include "engine.h"
 
 // TODO: hover effect when you are on a button
+//  Random Configuration
+//  Number of clicks
+//  Amount of time
 
 enum state {start, play, over};
 state screen;
@@ -161,8 +164,7 @@ void Engine::update() {
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
 
-    // If the size of the confetti vector reaches 100, change screen to over
-    // TODO: Change this to end when all lights are off
+    // Game over when all lights are off
     int count = 0;
     for (const unique_ptr<Shape>& b : buttonVec) {
         vec3 color = b->getColor3();
@@ -194,7 +196,7 @@ void Engine::render() {
             string sentence2 = "Click again to untoggle.";
             string sentence3 = "Switch off all the lights with the least number of clicks.";
 
-            // Positioning
+            // Positioning, size, color
             this->fontRenderer->renderText(sentence1, width / 6.5 - (5 * title.length()), height / 2 + 50, 0.5,vec3{0.871, 0.055, 0.8});
             this->fontRenderer->renderText(sentence2, width / 6.5 - (5 * title.length()), height / 2, 0.5, vec3{0.871, 0.055, 0.8});
             this->fontRenderer->renderText(sentence3, width / 6.5 - (5 * title.length()), height / 2 - 50, 0.5,vec3{0.871, 0.055, 0.8});
@@ -210,11 +212,12 @@ void Engine::render() {
                 b->setUniforms();
                 b->draw();
               }
+
             break;
         }
         case over: {
-            string message = "You win!";
-            this->fontRenderer->renderText(message, width/2 - (12 * message.length()), height/2, 1, vec3{1, 1, 1});
+            string win = "You win!";
+            this->fontRenderer->renderText(win, width/2 - (12 * win.length()), height/2, 1, vec3{1, 1, 1});
             break;
         }
     }
