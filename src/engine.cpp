@@ -156,6 +156,7 @@ void Engine::processInput() {
         }
         endGameFrame = currentFrame;
     }
+
     // Save mousePressed for next frame
     mousePressedLastFrame = mousePressed;
 }
@@ -216,7 +217,7 @@ void Engine::render() {
 
             // Display number of moves made
             string moves = "Moves: " + std::to_string(clickCount);
-            fontRenderer->renderText(moves, width/3 - (12 * moves.length()),height-32, 0.6, vec3{1, 1, 1});
+            fontRenderer->renderText(moves, width/1.3 - (12 * moves.length()),height-32, 0.6, vec3{1, 1, 1});
 
             break;
         }
