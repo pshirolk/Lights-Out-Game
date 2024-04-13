@@ -161,6 +161,8 @@ void Engine::processInput() {
     mousePressedLastFrame = mousePressed;
 }
 
+
+
 void Engine::update() {
     // Calculate delta time
     currentFrame = glfwGetTime();
