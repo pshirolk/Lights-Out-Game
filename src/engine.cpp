@@ -154,6 +154,7 @@ void Engine::processInput() {
             }
 
         }
+        endGameFrame = currentFrame;
     }
     // Save mousePressed for next frame
     mousePressedLastFrame = mousePressed;
@@ -161,7 +162,7 @@ void Engine::processInput() {
 
 void Engine::update() {
     // Calculate delta time
-    float currentFrame = glfwGetTime();
+    currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
 
@@ -217,15 +218,15 @@ void Engine::render() {
             string moves = "Moves: ";
             fontRenderer->renderText(moves, width/3 - (12 * moves.length()),height-32, 0.6, vec3{1, 1, 1});
 
-
-            // Display time
-            string time = "Time: ";
-            fontRenderer->renderText(time, width/1.5 - (12 * time.length()),height-32, 0.6, vec3{1, 1, 1});
             break;
         }
         case over: {
             string win = "You win!";
             this->fontRenderer->renderText(win, width/2 - (12 * win.length()), height/2, 1, vec3{1, 1, 1});
+
+            // Display time
+            string time = "Time: " + std::to_string(endGameFrame);
+            fontRenderer->renderText(time, width/2 - (8*time.length()),height/2 - 30, 0.6, vec3{1, 1, 1});
             break;
         }
     }

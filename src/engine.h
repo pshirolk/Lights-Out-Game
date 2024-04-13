@@ -96,6 +96,8 @@ public:
     void render();
 
     /* deltaTime variables */
+    float currentFrame = 0;
+    float endGameFrame = 0;
     float deltaTime = 0.0f; // Time between current frame and last frame
     float lastFrame = 0.0f; // Time of last frame (used to calculate deltaTime)
 
