@@ -221,10 +221,11 @@ void Engine::render() {
             break;
         }
         case over: {
+            // Display win message
             string win = "You win!";
             this->fontRenderer->renderText(win, width/2 - (12 * win.length()), height/2, 1, vec3{1, 1, 1});
 
-            // Display time
+            // Display time message
             string time = "Time: " + std::to_string(endGameFrame);
             fontRenderer->renderText(time, width/2 - (8*time.length()),height/2 - 30, 0.6, vec3{1, 1, 1});
             break;
