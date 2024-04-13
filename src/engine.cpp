@@ -146,7 +146,7 @@ void Engine::processInput() {
                 if (MouseY < button->getBottom() && MouseY > button->getTop() &&
                     MouseX < button->getRight() && MouseX > button->getLeft()) {
                     // find index of button and change color
-
+                    clickCount++;
                     turnLight(counter);
                     break;
                 }
@@ -215,7 +215,7 @@ void Engine::render() {
               }
 
             // Display number of moves made
-            string moves = "Moves: ";
+            string moves = "Moves: " + std::to_string(clickCount);
             fontRenderer->renderText(moves, width/3 - (12 * moves.length()),height-32, 0.6, vec3{1, 1, 1});
 
             break;

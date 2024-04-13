@@ -96,6 +96,7 @@ public:
     void render();
 
     /* deltaTime variables */
+    int clickCount = 0;
     float currentFrame = 0;
     float endGameFrame = 0;
     float deltaTime = 0.0f; // Time between current frame and last frame
