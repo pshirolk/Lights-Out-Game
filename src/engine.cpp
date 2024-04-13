@@ -75,6 +75,7 @@ void Engine::initShaders() {
 void Engine::initShapes() {
     //srand((int)time(nullptr));
     //color c = color{1,1,float(rand() % 2),1};
+    //color d = color{1,1,float(rand() % 2),1};
     // All buttons we use
     //spawnButton = make_unique<Rect>(shapeShader, vec2{width/2,height/2}, vec2{80, 80}, color{1, 0, 0, 1});
     this->buttonVec.push_back(make_unique<Rect>(shapeShader, vec2{width/2 - 200,height/2 + 200}, vec2{80, 80}, color{255, 255, 0, 1})); //255, 255, 0, 1 sets yellow
