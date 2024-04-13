@@ -227,7 +227,7 @@ void Engine::render() {
 
             // Display time message
             string time = "Time: " + std::to_string(endGameFrame);
-            fontRenderer->renderText(time, width/2 - (8*time.length()),height/2 - 30, 0.6, vec3{1, 1, 1});
+            fontRenderer->renderText(time, width/2 - (7.2*time.length()),height/2 - 30, 0.6, vec3{1, 1, 1});
             break;
         }
     }
