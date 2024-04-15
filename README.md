@@ -1,6 +1,8 @@
 # Lights Out Project
 
-This is a C++ graphics program in collaboration with a partner that allows the user to play the game Lights Out.
+This is a C++ graphics program in that allows the user to play the game Lights Out.
+
+It is made in collaboration with my partner Owen Davis from an advanced programming class.
 
 This project was built using Professor Lisa Dion's starter code from a previous graphics project.
 
