@@ -1,4 +1,4 @@
-# Lights Out Project
+# Lights Out Game
 
 This is a C++ graphics program in that allows the user to play the game Lights Out.
 
